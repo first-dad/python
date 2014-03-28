@@ -1,0 +1,241 @@
+# coding :utf-8
+8
+������� �����
+� ����� �������� ����� ������ �������� xls, txt, mp3
+������� ��������� ,������� ����� �������� ��� ����� ������������� ��������� �� ���� ������ ���� �����
+� ���� ��������� ��������� � �����-�� ������ txt , ��� ��� ��� ��������� � ���� � �� ����� python.
+����� ���������� ���� python � �����
+
+
+2. 
+���� 3 ����� ��������� 7, 49, 112
+����� ��������� ������� ��������� ������ ��������� � ����� ������� ���� (112)
+������� 3 ��������:
+������� 7��
+������� 49��
+� ��� � ������ (� ��� � ������ ������ ���� ���������� ����������)
+- ���� ��������� � ����������, �� ������� �� �������
+
+                 ���� 2 py_dev
+
+�����    int 12  - 38,5 float - complex 5 + 7j
+
+x = 7&3  ���������� �  
+x = 7|3   ���
+x = 7^3   ��������������� ���
+
+������������ ������ ����� int � ������ 27 = 2147483647 ��� -21474836478
+
+x = 10 
+x.__sizeof__() # ������ ���������� ������
+28   
+
+
+1)from math import sqrt
+2)import math
+
+import random
+random()  ������� ��������� �����
+choice([1,2,3])  �������(��������) ���� �� ��������� ������
+
+
+abs()   ������
+sum([1,2,3])   �����
+round(13,7)   ��������
+
+
+(18*32+11/18)**3
+
+����� ����� ������ ���������� � math
+
+\u 043f   ������
+r'tex\78'   ������������ ���������
+
+.find("7")  ������� ������ � �������� ���������� ������
+.replace("py","Py")    ������
+
+
+��: ����� ������������ ���������������� � ������
+
+
+       ���� 3
+
+plus = lambda x,y:x+y  �������
+plus(1,2)=3
+
+func(lambda x,y:x*y)
+
+names.sort(key= lambda n: n.lower())   names- ������
+
+n = lambda x,y,z : [ 0 if x == "plus" else z + y if ... else ...]
+print (n("plus",1,2))
+[0]
+
+n = lambda list : [k*k for k in list]
+m = n ([1,2,3])
+print (m)
+[1,4,9]
+
+def func(line):
+    return line.lower()
+line = "ABC"
+print (func(line))
+abc
+
+
+def n (action,a,b):
+    if action == "plus":
+        return a + b
+    elif action == "minus":
+        return a - b
+    elif action == "multiply":
+        return a * b
+    elif action == "divide":
+        return a / b
+print (n("minus",7,3))
+4
+
+
+def mt (**params):
+    fgcolor = params.pop('fgcolor',"black")
+    if params:
+        raise TypeError ("nety %" % list (params))
+    print (fgcolor)
+print (mt(fgcolor = 'white'))
+white
+None
+
+���  
+def mt (**params):
+    fgcolor = params.pop('fgcolor',"black")
+    if params:
+        raise TypeError ("nety %" % list (params))
+    print (fgcolor)
+print (mt())
+black
+None
+
+���
+
+def mt (**params):
+    fgcolor = params.pop('fgcolor',"black")
+    if params:
+        raise TypeError ("nety %" % list (params))
+    print (fgcolor)
+print (mt(fgcolor = 'white',vid = 'good'))
+
+
+
+def f(a):
+    if a == 1:
+        return f(a)      ��������
+
+
+def factorial(n):
+    if n <=1:
+        return 1             ���������� ����������
+    else:
+        return n*factorial(n-1)
+print (factorial(10))
+3628800
+
+          ���� 4
+
+
+lst = [1,2,3,4,5,6,7,8,9]
+d = [2*a for a in lst if a > 7]
+print (d)                            
+[16,18]                                  ���������
+
+
+q = [2,6,9]
+w = [6,23,45]
+e = [4,56,4]
+r = [q,w,e]
+d = [print(a) for a in r if a[1] > 20]
+[6, 23, 45]
+[4, 56, 4]
+
+q = [2,6,9]
+w = [6,23,45]
+e = [4,56,4]
+r = [q,w,e]
+def gen (r):
+    for t in r:
+        yield t[1]
+for g in gen(r):
+    print (g)
+6
+23
+56
+
+def gen ():
+    for line in open("file.txt"):
+        if "python" in line:
+            yield line
+for g in gen():
+    print (g)                     ������� ������ ���������� ����� "python"
+
+
+
+import os
+
+def gen1 (dir):
+    for f in os.listdir(dir):
+        print (f)
+        if f.find(".txt") >= 0:
+            for line in open(dir +"/"+ f):
+                yield line.count("Django")
+for g in gen('C:\\Users\\����\\text'):
+    print (g)
+
+
+
+gen = (line.count() for fi in os.listdir() for line in open (fi) if "Python" in line)
+
+
+import os
+gen = (line.count("Django") for fi in os.listdir('C:\\Users\\����\\Desktop\\text\\')
+       for line in open ('C:\\Users\\����\\Desktop\\text\\'+fi)
+       if ".txt" in fi
+       if "Django" in line)
+for i in gen : print (i)
+1
+1
+
+
+import os
+open ("output.dat","w").writelines(
+    l.replace("none","False")
+    for l in open ("input.dat"))
+
+
+def sopr():
+    while True:           �����������
+        x= (yield)
+        print (x)
+so = sopr()
+so.next()
+so.send(7)
+so.send("HELLO")
+so.send(18)
+
+
+
+class p:
+    def next(self):
+        return 1
+    def __iter__(self):
+        return (self)
+
+
+import os
+mo = {'name':'suzen','age':41,'parent':None}      ���������
+son = {'name':'alex','age':8,'parent':mo}
+mo ['child'] = son
+
+for a in mo:
+    print (a, 'value :',mo[a])
+
+
+

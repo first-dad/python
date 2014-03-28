@@ -1,0 +1,6 @@
+Django is the best framework of the world.
+Now its version is a 1.6. Its main blablaba:
+       -12
+       -13
+Django now blablabla:
+       Hi,world!

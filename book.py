@@ -35,3 +35,44 @@ print (sumtree(L))
 '''
 
 
+# Косвенный вызов функции
+
+'''
+def echo(message):
+    print (message)
+'''
+
+
+'''
+schedule = [(echo,'Spam!'),(echo,'Ham!')]
+for (func,arg) in schedule:
+    func (arg)
+'''
+
+
+'''
+def make(label):
+    def echo(message):
+        print (label +':'+ message)
+    return echo
+F = make('Spam!')
+F('Ham!')
+'''
+
+if __name__ == '__main__':
+'''
+    from tkinter import Button, mainloop
+    L = input('Write a few digits after the comma:').split(',')
+    n=1
+    while n < len(L):
+        for i in range(len(L)-n):
+            if L[i] > L[i+1]:
+                L[i],L[i+1] = L[i+1],L[i]
+        n += 1
+    L = list(map(float,L))
+    x = Button(
+        text = 'Press me, if you will want to see result',
+        command = (lambda : print(L)))
+    x.pack()
+    mainloop()
+'''

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from sets import Set
+from sets import set
 import math
 
 AllowedOperators = { #словарь(ассоциативный массив) операторов

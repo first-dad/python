@@ -2,7 +2,10 @@
 
 # Файл timeseqs.py
 
-import sys, mytimer
+import sys
+
+from lutz import mytimer
+
 reps = 10000
 repslist = range(reps)
 
